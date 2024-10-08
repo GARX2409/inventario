@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Inventario</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gestión de Inventario</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Agregar Producto</h2>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nombreProducto" placeholder="Nombre del Producto">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="cantidadProducto" placeholder="Cantidad" min="1">
+                </div>
+                <button class="btn btn-primary btn-block" onclick="agregarProducto()">Agregar Producto</button>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Actualizar Producto</h2>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nombreActualizar" placeholder="Nombre del Producto">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="nuevaCantidad" placeholder="Nueva Cantidad" min="0">
+                </div>
+                <button class="btn btn-warning btn-block" onclick="actualizarProducto()">Actualizar Producto</button>
+            </div>
+        </div>
+
+        <h2>Inventario Actual</h2>
+        <button class="btn btn-danger mb-3" onclick="eliminarSinStock()">Eliminar Productos sin Stock</button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre del Producto</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="listaProductos">
+                <!-- Aquí se mostrarán los productos -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Archivo de JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
